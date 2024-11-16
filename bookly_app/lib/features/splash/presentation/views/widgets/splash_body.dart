@@ -1,4 +1,5 @@
-import 'package:bookly_app/core/utils/assets.dart';
+import 'package:bookly_app/features/splash/presentation/views/widgets/image_fade_transition.dart';
+import 'package:bookly_app/features/splash/presentation/views/widgets/text_fade_transition.dart';
 import 'package:flutter/material.dart';
 
 class SplashViewBody extends StatefulWidget {
@@ -11,21 +12,12 @@ class SplashViewBody extends StatefulWidget {
 class _SplashViewBodyState extends State<SplashViewBody>
     with SingleTickerProviderStateMixin {
   late AnimationController animationController;
-  late Animation<Offset> slidingAnimation;
+  late Animation<double> fadeAnimation;
 
   @override
   void initState() {
     super.initState();
-    animationController =
-        AnimationController(vsync: this, duration: const Duration(seconds: 2));
-    slidingAnimation =
-        Tween<Offset>(begin: const Offset(0, 2), end: Offset.zero)
-            .animate(animationController);
-
-    animationController.forward();
-    slidingAnimation.addListener(() {
-      setState(() {});
-    });
+    initFadeAnimation();
   }
 
   @override
@@ -34,13 +26,19 @@ class _SplashViewBodyState extends State<SplashViewBody>
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        const Image(image: AssetImage(AssetsData.logo)),
+        LogoFadeTransition(fadeAnimation: fadeAnimation),
         const SizedBox(height: 4),
-        Center(
-            child: SlideTransition(
-                position: slidingAnimation,
-                child: const Text("Read Free Books"))),
+        TextFadeTransition(fadeAnimation: fadeAnimation),
       ],
     );
+  }
+
+  void initFadeAnimation() {
+    animationController =
+        AnimationController(vsync: this, duration: const Duration(seconds: 3));
+    fadeAnimation =
+        Tween<double>(begin: 0.0, end: 1.0).animate(animationController);
+
+    animationController.forward();
   }
 }
