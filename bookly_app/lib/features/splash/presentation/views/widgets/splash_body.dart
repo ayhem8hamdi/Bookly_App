@@ -21,8 +21,13 @@ class _SplashViewBodyState extends State<SplashViewBody>
   void initState() {
     super.initState();
     initFadeAnimation();
-
     navigationToHomeScreen();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    animationController.dispose();
   }
 
   @override
