@@ -23,9 +23,26 @@ class HomeViewBody extends StatelessWidget {
             "Best Seller",
             style: Styles.textSTyle22,
           ),
-          BestSellerBookItem()
+          BestSellerBooksListBuilder()
         ],
       ),
     );
+  }
+}
+
+class BestSellerBooksListBuilder extends StatelessWidget {
+  const BestSellerBooksListBuilder({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(
+        child: SizedBox(
+      width: MediaQuery.of(context).size.width * 0.90,
+      child: ListView.builder(
+          padding: const EdgeInsets.only(bottom: 12),
+          physics: const BouncingScrollPhysics(),
+          itemCount: 10,
+          itemBuilder: (context, index) => const BestSellerBookItem()),
+    ));
   }
 }

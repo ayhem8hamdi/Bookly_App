@@ -8,17 +8,16 @@ class BestSellerBookItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(
+    return const Padding(
+      padding: EdgeInsets.only(
         top: 14,
       ),
       child: SizedBox(
-        height: 124,
-        width: MediaQuery.of(context).size.width * 0.85,
-        child: const Row(
+        height: 122,
+        child: Row(
           children: [
             CustomListViewItem(),
-            SizedBox(width: 12),
+            SizedBox(width: 16),
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -37,7 +36,7 @@ class BestSellerBookItem extends StatelessWidget {
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
                   ),
-                  SizedBox(height: 8),
+                  SizedBox(height: 4),
                   BookRatingAndPrice(),
                 ],
               ),
