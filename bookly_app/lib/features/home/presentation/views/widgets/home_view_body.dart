@@ -9,23 +9,27 @@ class HomeViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.only(left: 24),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          CustomAppBar(),
-          BooksListViewBuilder(),
-          SizedBox(
-            height: 33,
+    return const CustomScrollView(
+      slivers: [
+        SliverToBoxAdapter(
+          child: Padding(
+            padding: EdgeInsets.only(left: 24),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                CustomAppBar(),
+                BooksListViewBuilder(),
+                SizedBox(height: 33),
+                Text(
+                  "Best Seller",
+                  style: Styles.textSTyle22,
+                ),
+              ],
+            ),
           ),
-          Text(
-            "Best Seller",
-            style: Styles.textSTyle22,
-          ),
-          BestSellerBooksListBuilder()
-        ],
-      ),
+        ),
+        BestSellerBooksListBuilder(),
+      ],
     );
   }
 }
@@ -35,14 +39,14 @@ class BestSellerBooksListBuilder extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-        child: SizedBox(
-      width: MediaQuery.of(context).size.width * 0.90,
-      child: ListView.builder(
-          padding: const EdgeInsets.only(bottom: 12),
-          physics: const BouncingScrollPhysics(),
-          itemCount: 10,
-          itemBuilder: (context, index) => const BestSellerBookItem()),
-    ));
+    return SliverList(
+      delegate: SliverChildBuilderDelegate(
+        (context, index) => const Padding(
+          padding: EdgeInsets.symmetric(vertical: 8, horizontal: 24),
+          child: BestSellerBookItem(),
+        ),
+        childCount: 10,
+      ),
+    );
   }
 }
