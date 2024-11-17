@@ -7,12 +7,12 @@ class CustomListViewItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 8),
+      padding: const EdgeInsets.only(right: 18),
       child: AspectRatio(
         aspectRatio: 0.67,
         child: Container(
           decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(16),
+              borderRadius: BorderRadius.circular(20),
               image: const DecorationImage(
                   image: AssetImage(AssetsData.test), fit: BoxFit.fill)),
         ),
