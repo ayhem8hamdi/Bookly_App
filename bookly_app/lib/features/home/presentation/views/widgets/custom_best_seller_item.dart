@@ -8,37 +8,42 @@ class BestSellerBookItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 120,
-      width: MediaQuery.of(context).size.width * 0.8,
-      child: const Row(
-        children: [
-          CustomListViewItem(),
-          SizedBox(width: 12),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  "The Jungle Book",
-                  style: Styles.textSTyle22,
-                  maxLines: 1,
-                  overflow: TextOverflow.ellipsis,
-                ),
-                SizedBox(height: 4),
-                Text(
-                  "Rudyard Kipling",
-                  style: Styles.textStyle14,
-                  maxLines: 1,
-                  overflow: TextOverflow.ellipsis,
-                ),
-                SizedBox(height: 8),
-                BookRatingAndPrice(),
-              ],
+    return Padding(
+      padding: const EdgeInsets.only(
+        top: 14,
+      ),
+      child: SizedBox(
+        height: 124,
+        width: MediaQuery.of(context).size.width * 0.85,
+        child: const Row(
+          children: [
+            CustomListViewItem(),
+            SizedBox(width: 12),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    "The Jungle Book",
+                    style: Styles.textSTyle22,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                  SizedBox(height: 4),
+                  Text(
+                    "Rudyard Kipling",
+                    style: Styles.textStyle14,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                  SizedBox(height: 8),
+                  BookRatingAndPrice(),
+                ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

@@ -1,3 +1,4 @@
+import 'package:bookly_app/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 
 class BookRatingAndPrice extends StatelessWidget {
@@ -5,10 +6,10 @@ class BookRatingAndPrice extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Row(
+    return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text(
+        const Text(
           "19.99\$",
           style: TextStyle(
             fontSize: 16,
@@ -17,26 +18,20 @@ class BookRatingAndPrice extends StatelessWidget {
         ),
         Row(
           children: [
-            Icon(
+            const Icon(
               Icons.star,
               color: Colors.amber,
               size: 18,
             ),
-            SizedBox(width: 4),
-            Text(
+            const SizedBox(width: 4),
+            const Text(
               "4.8",
-              style: TextStyle(
-                fontSize: 14,
-                fontWeight: FontWeight.w500,
-              ),
+              style: Styles.textStyle16,
             ),
-            SizedBox(width: 4),
+            const SizedBox(width: 4),
             Text(
               "(2390)",
-              style: TextStyle(
-                fontSize: 12,
-                color: Colors.grey,
-              ),
+              style: Styles.textStyle14.copyWith(fontSize: 12),
             ),
           ],
         ),
