@@ -7,7 +7,6 @@ import 'package:get/get.dart';
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
-
   @override
   State<SplashViewBody> createState() => _SplashViewBodyState();
 }

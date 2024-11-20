@@ -13,7 +13,7 @@ class BestSellerBookItem extends StatelessWidget {
         top: 14,
       ),
       child: SizedBox(
-        height: 122,
+        height: 150,
         child: Row(
           children: [
             CustomListViewItem(),
