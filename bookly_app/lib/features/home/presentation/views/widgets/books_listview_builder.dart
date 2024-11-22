@@ -12,7 +12,9 @@ class BooksListViewBuilder extends StatelessWidget {
           physics: const BouncingScrollPhysics(),
           scrollDirection: Axis.horizontal,
           itemCount: 15,
-          itemBuilder: (context, index) => const CustomListViewItem()),
+          itemBuilder: (context, index) => const CustomListViewItem(
+                borderRaduis: 12,
+              )),
     );
   }
 }

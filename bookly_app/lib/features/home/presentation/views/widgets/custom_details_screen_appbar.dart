@@ -6,23 +6,24 @@ class CustomDetailsScreenAppbar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final double iconSize = MediaQuery.of(context).size.width * 0.08;
     return Row(
       children: [
         IconButton(
             onPressed: () {
               Get.back();
             },
-            icon: const Icon(
+            icon: Icon(
               Icons.close,
-              size: 32,
+              size: iconSize,
               color: Colors.white,
             )),
         const Spacer(),
         IconButton(
             onPressed: () {},
-            icon: const Icon(
+            icon: Icon(
               Icons.shopping_cart_outlined,
-              size: 32,
+              size: iconSize,
               color: Colors.white,
             )),
       ],

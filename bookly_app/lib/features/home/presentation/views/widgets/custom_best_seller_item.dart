@@ -22,7 +22,9 @@ class BestSellerBookItem extends StatelessWidget {
           height: 150,
           child: Row(
             children: [
-              CustomListViewItem(),
+              CustomListViewItem(
+                borderRaduis: 12,
+              ),
               SizedBox(width: 16),
               Expanded(
                 child: Column(

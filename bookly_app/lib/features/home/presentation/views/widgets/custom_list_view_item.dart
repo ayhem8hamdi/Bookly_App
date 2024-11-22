@@ -2,8 +2,8 @@ import 'package:bookly_app/core/utils/assets.dart';
 import 'package:flutter/material.dart';
 
 class CustomListViewItem extends StatelessWidget {
-  const CustomListViewItem({super.key});
-
+  const CustomListViewItem({super.key, required this.borderRaduis});
+  final double borderRaduis;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -12,7 +12,7 @@ class CustomListViewItem extends StatelessWidget {
         aspectRatio: 0.67,
         child: Container(
           decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(12),
+              borderRadius: BorderRadius.circular(borderRaduis),
               image: const DecorationImage(
                   image: AssetImage(AssetsData.test), fit: BoxFit.fill)),
         ),
