@@ -8,23 +8,21 @@ abstract class AppRouter {
   static String homeView = "/homeView";
   static String bookDetailsView = "/formationView";
 
-  static List<GetPage<dynamic>>? getViews() {
-    return [
-      GetPage(
-        name: splashView,
-        page: () => const SplashView(),
-        transition: Transition.leftToRight,
-      ),
-      GetPage(
-        name: homeView,
-        page: () => const HomeView(),
-        transition: Transition.circularReveal,
-      ),
-      GetPage(
-        name: bookDetailsView,
-        page: () => const BookDetailsView(),
-        transition: Transition.circularReveal,
-      ),
-    ];
-  }
+  static final List<GetPage<dynamic>> getViews = [
+    GetPage(
+      name: splashView,
+      page: () => const SplashView(),
+      transition: Transition.leftToRight,
+    ),
+    GetPage(
+      name: homeView,
+      page: () => const HomeView(),
+      transition: Transition.circularReveal,
+    ),
+    GetPage(
+      name: bookDetailsView,
+      page: () => const BookDetailsView(),
+      transition: Transition.circularReveal,
+    ),
+  ];
 }

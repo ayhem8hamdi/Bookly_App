@@ -1,5 +1,4 @@
-import 'package:bookly_app/constants.dart';
-import 'package:bookly_app/features/home/presentation/views/home_view.dart';
+import 'package:bookly_app/core/utils/app_router.dart';
 import 'package:bookly_app/features/splash/presentation/views/widgets/image_fade_transition.dart';
 import 'package:bookly_app/features/splash/presentation/views/widgets/text_fade_transition.dart';
 import 'package:flutter/material.dart';
@@ -53,8 +52,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
 
   void navigationToHomeScreen() {
     Future.delayed(const Duration(seconds: 3), () {
-      Get.to(() => const HomeView(),
-          transition: Transition.leftToRight, duration: kTransitionDuration);
+      Get.toNamed(AppRouter.homeView);
     });
   }
 }
