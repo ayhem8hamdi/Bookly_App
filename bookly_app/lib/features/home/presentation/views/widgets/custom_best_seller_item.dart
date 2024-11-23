@@ -1,7 +1,7 @@
 import 'package:bookly_app/core/utils/app_router.dart';
 import 'package:bookly_app/core/utils/styles.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/custom_best_seller_bookitem_footer.dart';
-import 'package:bookly_app/features/home/presentation/views/widgets/custom_list_view_item.dart';
+import 'package:bookly_app/features/home/presentation/views/widgets/custom_book_image_item.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -22,7 +22,7 @@ class BestSellerBookItem extends StatelessWidget {
           height: 150,
           child: Row(
             children: [
-              CustomListViewItem(
+              CustomBookImage(
                 borderRaduis: 12,
               ),
               SizedBox(width: 16),
