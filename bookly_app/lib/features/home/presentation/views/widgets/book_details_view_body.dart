@@ -1,4 +1,5 @@
 import 'package:bookly_app/core/utils/styles.dart';
+import 'package:bookly_app/features/home/presentation/views/widgets/book_details_button.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/custom_best_seller_bookitem_footer.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/custom_details_screen_appbar.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/custom_book_image_item.dart';
@@ -57,64 +58,8 @@ class BookDetailsViewBody extends StatelessWidget {
           const SizedBox(
             height: 24,
           ),
-          BookDetailsButton()
+          const BookDetailsButton()
         ],
-      ),
-    );
-  }
-}
-
-class BookDetailsButton extends StatelessWidget {
-  const BookDetailsButton({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      width: MediaQuery.of(context).size.width * .8,
-      child: const Row(
-        children: [
-          BookDetailsButtonContent(
-              color: Colors.black,
-              text: '19.99 \$',
-              borderRaduis: BorderRadius.only(
-                  topLeft: Radius.circular(13),
-                  bottomLeft: Radius.circular(13))),
-          BookDetailsButtonContent(
-              color: Colors.amber,
-              text: 'Free Preview',
-              borderRaduis: BorderRadius.only(
-                  topRight: Radius.circular(13),
-                  bottomRight: Radius.circular(13)))
-        ],
-      ),
-    );
-  }
-}
-
-class BookDetailsButtonContent extends StatelessWidget {
-  const BookDetailsButtonContent(
-      {super.key,
-      required this.text,
-      required this.borderRaduis,
-      required this.color});
-  final String text;
-  final BorderRadiusGeometry borderRaduis;
-  final Color color;
-  @override
-  Widget build(BuildContext context) {
-    return Expanded(
-      child: Container(
-        padding: const EdgeInsets.symmetric(vertical: 15),
-        decoration: BoxDecoration(
-          color: color,
-          borderRadius: borderRaduis,
-        ),
-        child: Text(
-          text,
-          style: Styles.textStyle16
-              .copyWith(fontWeight: FontWeight.w600, fontSize: 18),
-          textAlign: TextAlign.center,
-        ),
       ),
     );
   }
