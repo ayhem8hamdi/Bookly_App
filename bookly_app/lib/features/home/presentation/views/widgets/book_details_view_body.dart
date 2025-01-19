@@ -9,7 +9,7 @@ class BookDetailsViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final double paddingValue = MediaQuery.of(context).size.height * 0.04;
+    final double paddingValue = MediaQuery.of(context).size.height * 0.030;
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 25),
       child: Column(
@@ -21,7 +21,7 @@ class BookDetailsViewBody extends StatelessWidget {
           SizedBox(
             width: MediaQuery.of(context).size.width * 0.57,
             child: const CustomBookImage(
-              borderRaduis: 32,
+              borderRaduis: 16,
             ),
           ),
           const SizedBox(
@@ -53,8 +53,68 @@ class BookDetailsViewBody extends StatelessWidget {
           const SizedBox(
             height: 6,
           ),
-          const RatingWidget()
+          const RatingWidget(),
+          const SizedBox(
+            height: 24,
+          ),
+          BookDetailsButton()
         ],
+      ),
+    );
+  }
+}
+
+class BookDetailsButton extends StatelessWidget {
+  const BookDetailsButton({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: MediaQuery.of(context).size.width * .8,
+      child: const Row(
+        children: [
+          BookDetailsButtonContent(
+              color: Colors.black,
+              text: '19.99 \$',
+              borderRaduis: BorderRadius.only(
+                  topLeft: Radius.circular(13),
+                  bottomLeft: Radius.circular(13))),
+          BookDetailsButtonContent(
+              color: Colors.amber,
+              text: 'Free Preview',
+              borderRaduis: BorderRadius.only(
+                  topRight: Radius.circular(13),
+                  bottomRight: Radius.circular(13)))
+        ],
+      ),
+    );
+  }
+}
+
+class BookDetailsButtonContent extends StatelessWidget {
+  const BookDetailsButtonContent(
+      {super.key,
+      required this.text,
+      required this.borderRaduis,
+      required this.color});
+  final String text;
+  final BorderRadiusGeometry borderRaduis;
+  final Color color;
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(
+      child: Container(
+        padding: const EdgeInsets.symmetric(vertical: 15),
+        decoration: BoxDecoration(
+          color: color,
+          borderRadius: borderRaduis,
+        ),
+        child: Text(
+          text,
+          style: Styles.textStyle16
+              .copyWith(fontWeight: FontWeight.w600, fontSize: 18),
+          textAlign: TextAlign.center,
+        ),
       ),
     );
   }

@@ -6,7 +6,7 @@ import 'package:get/get.dart';
 abstract class AppRouter {
   static String splashView = "/";
   static String homeView = "/homeView";
-  static String bookDetailsView = "/formationView";
+  static String bookDetailsView = "/homeView/formationView";
 
   static final List<GetPage<dynamic>> getViews = [
     GetPage(
