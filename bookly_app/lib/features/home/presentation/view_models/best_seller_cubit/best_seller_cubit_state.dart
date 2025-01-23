@@ -1,7 +1,6 @@
 part of 'best_seller_cubit_cubit.dart';
 
-@immutable
-sealed class BestSellerCubitState {}
+abstract class BestSellerCubitState {}
 
 final class BestSellerCubitInitial extends BestSellerCubitState {}
 
