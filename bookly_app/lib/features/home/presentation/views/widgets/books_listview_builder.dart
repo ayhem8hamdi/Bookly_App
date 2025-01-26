@@ -5,7 +5,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class BooksListViewBuilder extends StatelessWidget {
-  const BooksListViewBuilder({super.key});
+  const BooksListViewBuilder({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -17,8 +19,10 @@ class BooksListViewBuilder extends StatelessWidget {
             child: ListView.builder(
                 physics: const BouncingScrollPhysics(),
                 scrollDirection: Axis.horizontal,
-                itemCount: 15,
-                itemBuilder: (context, index) => const CustomBookImage(
+                itemCount: state.books.length,
+                itemBuilder: (context, index) => CustomBookImage(
+                      bookUrl:
+                          state.books[index].volumeInfo.imageLinks.thumbnail,
                       borderRaduis: 12,
                     )),
           );
